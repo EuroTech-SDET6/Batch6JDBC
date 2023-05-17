@@ -2,7 +2,6 @@ package jdbctests;
 
 import java.sql.*;
 
-import static java.sql.ResultSet.TYPE_SCROLL_INSENSITIVE;
 
 public class Main {
 
@@ -17,7 +16,7 @@ public class Main {
         Connection connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
 
         // create a statement object
-        Statement statement = connection.createStatement(TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
         // run query and get result in ResultSet object
         ResultSet resultSet = statement.executeQuery("SELECT * FROM customers;");
